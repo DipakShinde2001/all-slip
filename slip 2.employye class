@@ -1,0 +1,24 @@
+class Employee {
+ static int count = 0;
+ int id;
+ String name, deptName;
+ double salary;
+ Employee(int id, String name, String deptName, double salary) {
+ this.id = id;
+ this.name = name;
+ this.deptName = deptName;
+ this.salary = salary;
+ count++;
+ System.out.println("Employee Count: " + count);
+ }
+ void display() {
+ System.out.println(id + " " + name + " " + deptName + " " +
+salary);
+ }
+}
+public class EmployeeTest {
+ public static void main(String[] args) {
+ Employee e1 = new Employee(1, "John", "HR", 50000);
+ e1.display();
+ }
+}
