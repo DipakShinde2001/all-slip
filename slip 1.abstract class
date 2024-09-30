@@ -1,0 +1,34 @@
+abstract class Order {
+ int id;
+ String description;
+ abstract void accept();
+ abstract void display();
+}
+class PurchaseOrder extends Order {
+ String customerName;
+ void accept() {
+ customerName = "Customer A";
+ }
+ void display() {
+ System.out.println("Purchase Order: " + customerName);
+ }
+}
+class SalesOrder extends Order {
+ String vendorName;
+ void accept() {
+ vendorName = "Vendor A";
+ }
+ void display() {
+ System.out.println("Sales Order: " + vendorName);
+ }
+}
+public class OrderTest {
+ public static void main(String[] args) {
+ PurchaseOrder p1 = new PurchaseOrder();
+ p1.accept();
+ p1.display();
+ SalesOrder s1 = new SalesOrder();
+ s1.accept();
+ s1.display();
+ }
+}
