@@ -1,0 +1,27 @@
+interface Marker {}
+class Product implements Marker {
+ int productId;
+ String productName;
+ double productCost;
+ int productQuantity;
+ static int count = 0;
+ Product(int productId, String productName, double productCost, int
+productQuantity) {
+ this.productId = productId;
+ this.productName = productName;
+ this.productCost = productCost;
+ this.productQuantity = productQuantity;
+ count++;
+ System.out.println("Product Count: " + count);
+ }
+ void display() {
+ System.out.println(productId + " " + productName + " " +
+productCost + " " + productQuantity);
+ }
+}
+public class ProductTest {
+ public static void main(String[] args) {
+ Product p1 = new Product(1, "Product A", 100, 2);
+ p1.display();
+ }
+}
